@@ -9,6 +9,9 @@ spec:
     - repoURL: https://github.com/Karim-feki/argocd_test.git
       path: cm
       targetRevision: main
+      destination:
+        server: https://kubernetes.default.svc
+        namespace: argocd
     - repoURL: https://argoproj.github.io/argo-helm
       targetRevision: 8.0.17
       chart: argo-cd
@@ -48,6 +51,6 @@ spec:
               # rbac:
               #   policy.csv: |
               #     g, "__REPLACE_THIS__", role:admin
-    destination:
-      server: https://kubernetes.default.svc
-      namespace: argocd
+      destination:
+        server: https://kubernetes.default.svc
+        namespace: argocd
