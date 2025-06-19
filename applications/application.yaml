@@ -8,7 +8,7 @@ spec:
   destination:
     server: https://kubernetes.default.svc
     namespace: default
-  source:
+  sources:
     - repoURL: https://github.com/Karim-feki/argocd_test.git
       path: cm
       targetRevision: main
