@@ -3,6 +3,5 @@ kind: ConfigMap
 metadata:
   name: {{ .Values.configMapName }}
 data:
-{{- range $key, $value := .Values.data }}
-  {{ $key }}: "{{ $value }}"
-{{- end }}
+  {{ .Values.svgFileName }}: |
+{{ .Values.svgContent | indent 4 }}

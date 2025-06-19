@@ -29,7 +29,30 @@ spec:
               annotations:
                 service.beta.kubernetes.io/azure-load-balancer-internal: "true"
               type: LoadBalancer
+            extraVolumes:
+              - name: svg-logo
+                configMap:
+                  name: svg-logo-cm
+
+            extraVolumeMounts:
+              - name: svg-logo
+                mountPath: /app/static/logo.svg
+                subPath: logo.svg
+                readOnly: true
+
           configs:
+            styles: |
+              .login__logo.width-control::after {
+                content: "";
+                display: block;
+                width: 150px;
+                height: 150px;
+                background-image: url(/app/static/logo.svg);
+                background-size: contain;
+                background-repeat: no-repeat;
+                background-position: center;
+                margin: 0 auto;
+              }
             cm:
               accounts.keep: apiKey
               # url: __REPLACE_THIS__OR_REMOVE__

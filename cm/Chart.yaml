@@ -1,6 +1,6 @@
 apiVersion: v2
-name: simple-configmap
-description: A Helm chart that creates a Kubernetes ConfigMap
+name: almond-logo-configmap
+description: A Helm chart that creates a almond logo ConfigMap
 type: application
 version: 0.1.0
 appVersion: "1.0"

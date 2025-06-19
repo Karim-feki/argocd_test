@@ -1,5 +1,5 @@
-configMapName: my-configmap
-data:
-  billing_mode: "production"
-  currency: "USD"
-  region: "us-west"
+configMapName: svg-logo-cm
+svgFileName: logo.svg
+svgContent: |
+  <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="logo_almond" data-name="logo almond" width="176" height="31.655" viewBox="0 0 176 31.655"><defs><clipPath id="clip-path"><rect id="Rectangle_2" data-name="Rectangle 2" width="176" height="31.655" fill="none"></rect></clipPath></defs><g id="Groupe_1" data-name="Groupe 1" clip-path="url(#clip-path)"><path id="Tracé_1" data-name="Tracé 1" d="M26.028,29.527C16.965,26.665,9.491,31.46,9.592,36.65c.087,4.439,4.185,6.747,8,6.734a8.4,8.4,0,0,0,8.429-8.364c.037-1.732,0-5.493,0-5.493m8.505,19.3H29.017c-1.7,0-3.079-2.55-3.079-4.25h-.1a14.666,14.666,0,0,1-10.719,5.17C6.624,49.749,0,45.382,0,36.788c0-8,7.5-13.7,15.118-14.54,5.1-.56,11.048-.138,19.3,1.7Z" transform="translate(0 -18.094)" fill="#00ecb2"></path><!-- Removed additional paths for brevity -->
+  </svg>
