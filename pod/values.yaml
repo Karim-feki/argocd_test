@@ -1,0 +1,5 @@
+podName: simple-nginx-pod
+image:
+  repository: nginx
+  tag: alpine
+  pullPolicy: IfNotPresent

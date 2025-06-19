@@ -1,0 +1,21 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: testing-tworesources-app
+  namespace: argocd
+spec:
+  project: default
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: default
+  sources:
+    - repoURL: https://github.com/kfeki/argocd_test.git
+      path: cm
+      targetRevision: main
+    - repoURL: https://github.com/kfeki/argocd_test.git
+      path: pod
+      targetRevision: main
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true

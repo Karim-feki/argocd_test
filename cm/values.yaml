@@ -1,0 +1,5 @@
+configMapName: my-configmap
+data:
+  billing_mode: "production"
+  currency: "USD"
+  region: "us-west"
