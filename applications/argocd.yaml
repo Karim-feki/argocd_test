@@ -29,12 +29,12 @@ spec:
               annotations:
                 service.beta.kubernetes.io/azure-load-balancer-internal: "true"
               type: LoadBalancer
-            extraVolumes:
+            volumes:
               - name: svg-logo
                 configMap:
                   name: svg-logo-cm
 
-            extraVolumeMounts:
+            volumeMounts:
               - name: svg-logo
                 mountPath: /app/static/logo.svg
                 subPath: logo.svg
