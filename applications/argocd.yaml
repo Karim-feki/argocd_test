@@ -1,0 +1,53 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: argocd
+  namespace: argocd
+spec:
+  project: shared-tools-project
+  sources:
+    - repoURL: https://github.com/Karim-feki/argocd_test.git
+      path: cm
+      targetRevision: main
+    - repoURL: https://argoproj.github.io/argo-helm
+      targetRevision: 8.0.17
+      chart: argo-cd
+      helm:
+        values: |
+          applicationSet:
+            replicas: 1
+          controller:
+            replicas: 1
+          dex:
+            enabled: false
+          redis-ha:
+            enabled: false
+          server:
+            replicas: 1
+            service:
+              annotations:
+                service.beta.kubernetes.io/azure-load-balancer-internal: "true"
+              type: LoadBalancer
+          configs:
+            cm:
+              accounts.keep: apiKey
+              # url: __REPLACE_THIS__OR_REMOVE__
+              # admin.enabled: true
+              # oidc.config: |
+              #   name: Azure
+              #   issuer: https://login.microsoftonline.com/__REPLACE_THIS__/v2.0
+              #   clientID: __REPLACE_THIS__
+              #   clientSecret: $oidc.azure.clientSecret
+              #   requestedIDTokenClaims:
+              #     groups:
+              #       essential: true
+              #   requestedScopes:
+              #     - openid
+              #     - profile
+              #     - email
+              # rbac:
+              #   policy.csv: |
+              #     g, "__REPLACE_THIS__", role:admin
+    destination:
+      server: https://kubernetes.default.svc
+      namespace: argocd
