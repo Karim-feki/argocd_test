@@ -6,9 +6,9 @@ metadata:
 spec:
   project: default
   sources:
-    - repoURL: https://github.com/Karim-feki/argocd_test.git
-      path: cm
-      targetRevision: main
+    - repoURL: https://code.almond.eu/tools/aks-apps.git
+      path: apps-shared-tools/argocd-extra/
+      targetRevision: almond-logo
       
     - repoURL: https://argoproj.github.io/argo-helm
       targetRevision: 8.0.17
