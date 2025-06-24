@@ -36,7 +36,7 @@ spec:
 
             volumeMounts:
               - name: svg-logo
-                mountPath: /app/static/logo.svg
+                mountPath: /shared/argocd/assets/logo.svg
                 subPath: logo.svg
                 readOnly: true
 
